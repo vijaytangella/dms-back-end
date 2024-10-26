@@ -1,6 +1,5 @@
 package com.dms.demo.Configuration;
 
-
 import com.dms.demo.userimplementation.MyUserDetailsService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,8 +36,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable() // Disable CSRF
-            .authorizeRequests().antMatchers("/api/auth/login","/api/auth/register").permitAll() // Allow login
-            .anyRequest().authenticated() // All other requests require authentication
+            .authorizeRequests()
+                .antMatchers("/api/auth/login", "/api/auth/register").permitAll() // Allow login and register
+                .anyRequest().authenticated() // All other requests require authentication
             .and()
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS); // Use stateless sessions
 
@@ -48,6 +48,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
-        return super.authenticationManagerBean();
+        return super.authenticationManagerBean(); // Expose AuthenticationManager as a bean
     }
 }

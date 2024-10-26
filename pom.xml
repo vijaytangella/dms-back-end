@@ -1,6 +1,6 @@
 <project xmlns="https://maven.apache.org/POM/4.0.0"
          xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/POM/4.0.0">
+         xsi:schemaLocation="https://maven.apache.org/POM/4.0.0 https://maven.apache.org/POM/4.0.0">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -46,10 +46,6 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session-core</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
@@ -90,7 +86,7 @@
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
             <artifactId>jjwt</artifactId>
-            <version>0.9.1</version> <!-- Choose the version you need -->
+            <version>0.9.1</version>
         </dependency>
 
         <!-- Lombok -->
@@ -116,35 +112,43 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- RSocket Dependencies -->
+        <!-- RSocket Dependencies (if needed) -->
+        <!-- Uncomment if you require RSocket
         <dependency>
             <groupId>io.rsocket</groupId>
             <artifactId>rsocket-core</artifactId>
-            <version>1.1.1</version> <!-- Use the latest version -->
+            <version>1.1.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-rsocket</artifactId>
-            <version>5.5.2</version> <!-- Use the latest version -->
+            <version>5.5.2</version>
         </dependency>
+        -->
 
-        <!-- RabbitMQ Dependency -->
+        <!-- RabbitMQ Dependency (if needed) -->
+        <!-- Uncomment if you require RabbitMQ
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
+        -->
 
-        <!-- Elasticsearch Dependencies -->
+        <!-- Elasticsearch Dependencies (if needed) -->
+        <!-- Uncomment if you require Elasticsearch
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-elasticsearch</artifactId>
         </dependency>
+        -->
 
-        <!-- Reactive Dependencies -->
+        <!-- Reactive Dependencies (if needed) -->
+        <!-- Uncomment if you require WebFlux
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
+        -->
     </dependencies>
 
     <build>
